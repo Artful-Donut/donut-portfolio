@@ -1,0 +1,44 @@
+import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
+
+function InfoWidget() {
+
+    return (
+        <div className='flex-col items-center justify-center w-xsm md:w-50'>
+            <Link href='/'>
+                <div id='name'
+                    className='p-2 m-2 mb-6 rounded-sm bg-rose shadow-md shadow-amaranth'>
+                    <h2 className='text-amaranth text-xl font-medium hover:text-cream hover:opacity-75 duration-200'>Donuts4evry1</h2>
+                </div>
+            </Link>
+
+            <div id='about' className='lg:flex lg:flex-col p-4 m-2 rounded-sm w-full hidden bg-rose shadow-md shadow-amaranth'>
+                <section id='qualifications' className='mb-2'>
+                    <p className='font-bold text-amaranth'>
+                        Digital Artist | Graphic Designer | Game Developer | Streamer</p>
+                </section>
+                <section className='mb-2'>
+                    <p className='text-amaranth'>
+                        Programmer by trade. People know me for jellyfish, though.
+                    </p>
+                </section>
+                <section className=''>
+                    <p className=' text-amaranth'>
+                        Sometimes I draw and make games. I hope to get lots of people to make their own games, too!
+                    </p>
+                </section>
+                {/**
+                 <section className=''>
+                    <p className=' text-amaranth'>
+                        Commission me on my Ko-Fi!!
+                    </p>
+                </section>
+                 */}
+
+            </div>
+
+        </div>
+    )
+}
+
+export default InfoWidget
