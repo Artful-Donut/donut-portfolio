@@ -45,7 +45,7 @@ export const featured_projects: caroselItem[] = [
     {
         title: "Mahou Learning",
         image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi41mdZ11ZPqoO7vNOTUH2NyKOvnpqygJwO9zgRyr6LPBSxMx00OEeMEOeF5gHkbgkszNrelyV8tYmB-3W_MCvLT_X7Ar7mrrOoZ1GhB2iM7hWmmYGKx2JhqDQICrcT_oij6yzsz8V3TMxgmwnt_1pGTIyVlovvKrrMbNhfWIpVKnsEexRl-9q5lsW8P8k/w320-h320/mahou%20learning%20icon.png",
-        imageRedirect: 'mahou-learning.tumblr.com',
+        imageRedirect: 'https://mahou-learning.tumblr.com',
         description: "A Japanese Flashcard app with SRS and a Magical Girl Pet Simulator!\nAvailable on Android for Closed Testing! Contact me to get access."
     },
     {
