@@ -13,7 +13,7 @@ function NavigationBar() {
     const [showNav, setShowNav] = useState(false);
 
     return (
-        <div className='flex flex-col w-screen h-full'>
+        <div className='flex flex-col max-w-dvw h-full'>
             <div id='nav image' className='relative w-full h-40'>
                 <Link href='/'>
                     <Image src={mizukurages}
@@ -24,7 +24,7 @@ function NavigationBar() {
                 </Link>
             </div>
 
-            <div className='md:w-min w-screen mx-auto justify-center md:items-end text-grape'>
+            <div className='md:w-min w-full mx-auto justify-center md:items-end text-grape'>
                 {/* Nav image goes here */}
                 <div id='collapsable nav bar' onClick={() => setShowNav((prev) => !prev)}className='flex flex-col items-center md:hidden'>
                     <GiHamburgerMenu className='text-grape text-4xl border-grape border-b-2 border-t-2 w-full
@@ -34,7 +34,7 @@ function NavigationBar() {
                             const usedRef = pageName == 'home' ? ' ' : pageName;
                             const navBarName = pageName == 'contact' ? 'Contact + Socials' : pageName.charAt(0).toLocaleUpperCase() + pageName.slice(1);
                             return ((
-                                <section key={index} className='py-2 w-screen text-xl text-center border-b
+                                <section key={index} className='py-2 w-full text-xl text-center border-b
                                 cursor-pointer hover:opacity-50 hover:px-5 duration-600'>
                                     <Link href={`/${usedRef}`} onClick={() => setShowNav(false)}>{navBarName}</Link>
                                 </section>

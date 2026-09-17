@@ -40,9 +40,9 @@ export default function Home() {
         <div id='contentPart' className="flex basis-3/4 justify-center">
           <div id='portfolio section' className="flex-col">
 
-            {caroselComponent("Featured Projects", featured_projects, '/portfolio', 4000)}
+            {caroselComponent("Featured Projects", featured_projects, '/portfolio', 8000)}
 
-            {caroselComponent("Featured Shop Items", featured_shop_items, 'https://ko-fi.com/donuts4evry1/commissions', 3000)}
+            {caroselComponent("Featured Shop Items", featured_shop_items, 'https://ko-fi.com/donuts4evry1/commissions', 8000)}
 
             <div id='blog stuff' className="flex flex-col items-center">
               <h1 className='py-2 text-amaranth text-center'>Recent Blog Posts</h1>

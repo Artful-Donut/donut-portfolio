@@ -53,15 +53,15 @@ function Portfolio() {
   return (
     <Layout
       infoWidgetBelowContent={
-        <div id='filters' className='flex flex-col items-start w-3/4 my-1 mt-3 ml-5'>
+        <div id='filters' className='flex flex-col lg:items-start items-center lg:w-3/4 my-1 mt-3 lg:ml-5'>
           <p className='mb-1 mx-2 font-bold text-xl text-grape'>Filter by:</p>
           <hr className='w-full border-2 rounded-2xl text-grape opacity-50 place-self-center' />
 
-          <div id='filter checkboxes' className='my-4 ml-5'>
+          <div id='filter checkboxes' className='lg:flex lg:flex-col flex flex-row justify-between w-full my-4 lg:ml-5'>
             {viableFilters.map((filter, index) => {
               const isActive = filters.includes(filter);
               return (
-                <div id='filter button' key={index} className='flex mb-2'>
+                <div id='filter button' key={index} className='flex mb-2 mx-2'>
                   <span id='checkbox' style={{ backgroundColor: isActive ? '#df9ca4' : 'transparent' }}
                     onClick={() => {
                       //console.log(filter + "box has been clicked!")
@@ -78,21 +78,17 @@ function Portfolio() {
         </div>
       }
       children={
-        <div id='post list' className='lg:columns-2 w-3/4'>
+        <div id='post list' className='md:columns-2 md:w-3/4 w-full'>
           {posts && filteredPosts.map((post, index) => {
             const sanitizedHTML = DOMpurify.sanitize(post.content);
             const date = post.published.slice(0, 10).replaceAll('-', '.');
             const usedLabels = post.labels.filter((label) => isFilter(label))
 
             return (
-              <div id='individual post' key={index} className='flex flex-col break-inside-avoid lg:w-10/12 w-2/3 basis-1/2 m-1 p-4 border-4 border-rose rounded-3xl 
+              <div id='individual post' key={index} className='flex flex-col break-inside-avoid lg:w-10/12  basis-1/2 lg:mx-0 mx-10 m-1 p-4 border-4 border-rose rounded-3xl 
               hover:shadow-xl hover:shadow-rose hover:basis-2/3 duration-100 wrap-anywhere'>
                 <div id='title spot' className='flex xl:flex-row lg:justify-between xl:items-end mb-1 h-min flex-col items-start'>
-                  <span id='date' className='flex items-center text-rose'>
-                    <p>date: </p>
-                    <p className='opacity-50 text-lg'>{date}</p>
-                  </span>
-                  <a href={post.url} target='_blank'>
+                  <a href={post.url} target='_blank' className='lg:w-2/3'>
                     <span className='text-soda lg:text-center text-lg cursor-pointer hover:text-xl hover:font-semibold hover:opacity-75 duration-200'>{post.title}</span>
                   </a>
                   <span id='tags' className=''>
@@ -104,6 +100,10 @@ function Portfolio() {
                   </span>
                 </div>
                 <hr className='border rounded-2xl text-grape opacity-50' />
+                <span id='date' className='flex items-center text-rose'>
+                  <p>date: </p>
+                  <p className='opacity-50 text-lg'>{date}</p>
+                </span>
                 <div id='post content' className='text-amaranth'
                   dangerouslySetInnerHTML={{ __html: sanitizedHTML }} />
               </div>
